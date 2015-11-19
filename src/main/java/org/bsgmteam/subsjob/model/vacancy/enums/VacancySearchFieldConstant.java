@@ -1,4 +1,4 @@
-package org.bsgmteam.subsjob.service.model.vo.vacancy.enums;
+package org.bsgmteam.subsjob.model.vacancy.enums;
 
 /**
  * The project name is subsjob.

@@ -1,4 +1,4 @@
-package org.bsgmteam.subsjob.service.model.vo.vacancy;
+package org.bsgmteam.subsjob.model.vacancy;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
