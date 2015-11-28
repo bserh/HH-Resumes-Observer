@@ -126,4 +126,22 @@ public class Vacancy implements Serializable {
     public void setSnippet(Snippet snippet) {
         this.snippet = snippet;
     }
+
+    @Override
+    public String toString() {
+        return "Vacancy{" +
+                "id='" + id + '\'' +
+                ", premium=" + premium +
+                ", address=" + address +
+                ", alternateUrl='" + alternateUrl + '\'' +
+                ", salary=" + salary +
+                ", name='" + name + '\'' +
+                ", area=" + area +
+                ", url='" + url + '\'' +
+                ", publishedAt='" + publishedAt + '\'' +
+                ", employer=" + employer +
+                ", type=" + type +
+                ", snippet=" + snippet +
+                '}';
+    }
 }

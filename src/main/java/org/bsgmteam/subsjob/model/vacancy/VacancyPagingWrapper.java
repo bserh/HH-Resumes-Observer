@@ -4,12 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
-/**
- * The project name is subsjob.
- * Created by sergey on 19.11.15 at 20:04.
- * For more information you should send mail to codedealerb@gmail.com
- */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VacancyPagingWrapper implements Serializable {
@@ -63,5 +59,16 @@ public class VacancyPagingWrapper implements Serializable {
 
     public void setFound(int found) {
         this.found = found;
+    }
+
+    @Override
+    public String toString() {
+        return "VacancyPagingWrapper{" +
+                "perPage=" + perPage +
+                ", items=" + Arrays.toString(items) +
+                ", page=" + page +
+                ", pages=" + pages +
+                ", found=" + found +
+                '}';
     }
 }
