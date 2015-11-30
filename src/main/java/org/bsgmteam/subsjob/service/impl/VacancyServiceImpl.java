@@ -36,7 +36,7 @@ public class VacancyServiceImpl implements VacancyService {
                 String keyPartOfUrl = "";
                 for (String arg : args) {
                     keyPartOfUrl += entry.getKey();
-                    if (isArgDigit(arg)) {
+                    if (isPartNeedAdditionDelimeters(arg, entry.getKey())) {
                         keyPartOfUrl += "=" + arg + "&";
                     } else {
                         keyPartOfUrl += "=\"" + arg + "\"&";
@@ -59,5 +59,9 @@ public class VacancyServiceImpl implements VacancyService {
             return false;
         }
         return true;
+    }
+
+    private boolean isPartNeedAdditionDelimeters(String arg, String key) {
+        return isArgDigit(arg) || key.compareTo("order_by") == 0 || key.compareTo("currency") == 0;
     }
 }
