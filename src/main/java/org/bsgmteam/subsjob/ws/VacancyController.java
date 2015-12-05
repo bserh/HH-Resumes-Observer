@@ -30,6 +30,8 @@ public class VacancyController {
             @RequestParam(value = "specialization", required = false) String specialization,
             @RequestParam(value = "area", required = false) Integer[] area,
             @RequestParam(value = "period", required = false) Integer period,
+            @RequestParam(value = "page", required = false) Integer page,
+            @RequestParam(value = "per_page", required = false) Integer perPage,
             @RequestParam(value = "currency", required = false, defaultValue = "USD") String currency,
             @RequestParam(value = "order_by", required = false, defaultValue = "publication_time") String orderBy,
             @RequestParam(value = "salary", required = false) Integer salary) {
@@ -51,6 +53,12 @@ public class VacancyController {
             if (areas.size() > 0) {
                 propertiesMap.put("area", areas.toArray(new String[areas.size()]));
             }
+        }
+        if (page != null) {
+            propertiesMap.put("page", new String[]{String.valueOf(page)});
+        }
+        if (perPage != null) {
+            propertiesMap.put("per_page", new String[]{String.valueOf(perPage)});
         }
         if (period != null) {
             propertiesMap.put("period", new String[]{String.valueOf(period)});
