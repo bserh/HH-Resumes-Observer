@@ -1,6 +1,6 @@
 package org.bsgmteam.subsjob.configuration;
 
-import org.bsgmteam.subsjob.model.vacancy.VacancyPagingWrapper;
+import org.bsgmteam.subsjob.model.vo.vacancy.VacancyPagingWrapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;

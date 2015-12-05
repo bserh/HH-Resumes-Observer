@@ -14,15 +14,16 @@ public class SearchProperties implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "searchProperties")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "searchProperties")
     private List<Text> text;
     private boolean onlyWithSalary;
     private String specialization;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "searchProperties")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "searchProperties")
     private List<Area> areas;
     private int period;
     private String currency;
     private String orderBy;
+    private int salary;
 
     public SearchProperties() {
 
@@ -90,5 +91,13 @@ public class SearchProperties implements Serializable {
 
     public void setOrderBy(String orderBy) {
         this.orderBy = orderBy;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 }

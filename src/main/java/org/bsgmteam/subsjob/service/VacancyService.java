@@ -1,6 +1,6 @@
 package org.bsgmteam.subsjob.service;
 
-import org.bsgmteam.subsjob.model.vacancy.VacancyPagingWrapper;
+import org.bsgmteam.subsjob.model.vo.vacancy.VacancyPagingWrapper;
 
 import java.util.Map;
 

@@ -1,6 +1,6 @@
 package org.bsgmteam.subsjob.ws;
 
-import org.bsgmteam.subsjob.model.vacancy.VacancyPagingWrapper;
+import org.bsgmteam.subsjob.model.vo.vacancy.VacancyPagingWrapper;
 import org.bsgmteam.subsjob.service.VacancyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

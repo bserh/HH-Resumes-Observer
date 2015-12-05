@@ -16,7 +16,8 @@ public class Area implements Serializable {
 
     private Integer areaId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    //    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private SearchProperties searchProperties;
 
     public Area() {

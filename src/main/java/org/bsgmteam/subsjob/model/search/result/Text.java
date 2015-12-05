@@ -13,7 +13,8 @@ public class Text implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @ManyToOne(fetch = FetchType.LAZY)
+    //    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private SearchProperties searchProperties;
     private String text;
 

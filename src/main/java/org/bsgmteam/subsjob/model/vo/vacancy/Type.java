@@ -1,4 +1,4 @@
-package org.bsgmteam.subsjob.model.vacancy;
+package org.bsgmteam.subsjob.model.vo.vacancy;
 
 import java.io.Serializable;
 
