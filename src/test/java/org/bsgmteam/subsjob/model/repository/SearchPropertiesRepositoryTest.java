@@ -93,5 +93,9 @@ public class SearchPropertiesRepositoryTest {
         }
 
         assertEquals(count, 1);
+
+        repository.delete(fetchedUpdatedProperties.getId());
+
+        assertNull(repository.findOne(fetchedUpdatedProperties.getId()));
     }
 }
