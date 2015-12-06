@@ -24,6 +24,7 @@ public class SearchProperties implements Serializable {
     private String currency;
     private String orderBy;
     private int salary;
+    private String userEmail;
 
     public SearchProperties() {
 
@@ -99,5 +100,13 @@ public class SearchProperties implements Serializable {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }

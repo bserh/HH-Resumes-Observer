@@ -22,4 +22,6 @@ public class Application {
     public VacancyService getVacancyService() {
         return new VacancyServiceImpl();
     }
+
+
 }
