@@ -2,11 +2,9 @@ package org.bsgmteam.subsjob.ws;
 
 import org.bsgmteam.subsjob.model.vo.vacancy.VacancyPagingWrapper;
 import org.bsgmteam.subsjob.service.VacancyService;
+import org.bsgmteam.subsjob.service.notification.email.impl.MailNotification;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,6 +21,10 @@ public class VacancyController {
     @Autowired
     private VacancyService service;
 
+    @Autowired
+    private MailNotification notification;
+
+    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping(value = "/vacancies", method = RequestMethod.GET)
     public VacancyPagingWrapper searchVacancies(
             @RequestParam(value = "text", required = false) String text,
@@ -71,4 +73,11 @@ public class VacancyController {
 
         return service.searchVacancies(propertiesMap);
     }
+
+    @RequestMapping(value = "/notify", method = RequestMethod.GET)
+    public void notifyAllSubscribers() {
+        //FIXME dopilit' eto
+    }
+
+    //TODO post dlya clusterov
 }

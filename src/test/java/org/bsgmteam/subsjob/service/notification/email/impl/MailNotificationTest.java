@@ -21,6 +21,7 @@ public class MailNotificationTest {
         properties.setOrderBy("date");
         properties.setSalary(101010);
         properties.setUserEmail("iflash95@gmail.com");
-        notification.sendSearchResults("iflash95@gmail.com", "codedealerb@gmail.com", "test");
+
+        notification.sendSearchResults(properties);
     }
 }

@@ -1,0 +1,11 @@
+@import url("../css/bootstrap.min.css");
+
+.navbar {
+
+    border-radius: 0;
+
+}
+
+.mainsearch {
+    margin-top: 100px;
+}

@@ -1,5 +1,6 @@
 package org.bsgmteam.subsjob.service.impl;
 
+import org.bsgmteam.subsjob.model.vo.vacancy.ClusteredVacancyWrapper;
 import org.bsgmteam.subsjob.model.vo.vacancy.VacancyPagingWrapper;
 import org.bsgmteam.subsjob.service.BaseRestConstants;
 import org.bsgmteam.subsjob.service.VacancyService;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -19,8 +21,20 @@ public class VacancyServiceImpl implements VacancyService {
 
     public VacancyPagingWrapper searchVacancies(Map<String, String[]> propertiesForURI) throws IllegalArgumentException {
         String url = createURLWithGetParameters(BaseRestConstants.BASE_URL, propertiesForURI);
+        System.out.println(url);
         HttpEntity<VacancyPagingWrapper> wrapper = restTemplate
                 .exchange(url, HttpMethod.GET, BaseRestConstants.getHTTPEntity(), VacancyPagingWrapper.class);
+        return wrapper.getBody();
+    }
+
+    @Override
+    public ClusteredVacancyWrapper getClusteredVacancies() {
+        Map<String, String[]> propertiesForURI = new HashMap<>();
+        propertiesForURI.put("clusters", new String[]{"true"});
+        String url = createURLWithGetParameters(BaseRestConstants.BASE_URL, propertiesForURI);
+        System.out.println(url);
+        HttpEntity<ClusteredVacancyWrapper> wrapper = restTemplate
+                .exchange(url, HttpMethod.GET, BaseRestConstants.getHTTPEntity(), ClusteredVacancyWrapper.class);
         return wrapper.getBody();
     }
 
@@ -62,6 +76,10 @@ public class VacancyServiceImpl implements VacancyService {
     }
 
     private boolean isPartNeedAdditionDelimeters(String arg, String key) {
-        return isArgDigit(arg) || key.compareTo("order_by") == 0 || key.compareTo("currency") == 0;
+        return isArgDigit(arg)
+                || key.compareTo("order_by") == 0
+                || key.compareTo("currency") == 0
+                || key.compareTo("only_with_salary") == 0
+                || key.compareTo("clusters") == 0;
     }
 }

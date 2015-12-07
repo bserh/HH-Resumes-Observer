@@ -1,5 +1,6 @@
 package org.bsgmteam.subsjob.service.impl;
 
+import org.bsgmteam.subsjob.model.vo.vacancy.ClusteredVacancyWrapper;
 import org.bsgmteam.subsjob.model.vo.vacancy.VacancyPagingWrapper;
 import org.junit.Test;
 
@@ -41,5 +42,16 @@ public class VacancyServiceImplTest {
         assertNotNull(wrapper);
         assertTrue(wrapper.getPerPage() == 20);//defaultValue
         assertTrue(wrapper.getItems().length != 0);
+    }
+
+    @Test
+    public void testGetClusters() {
+        VacancyServiceImpl service = new VacancyServiceImpl();
+
+        ClusteredVacancyWrapper wrapper = service.getClusteredVacancies();
+
+        assertNotNull(wrapper);
+        assertTrue(wrapper.getPerPage() != 0);
+        assertTrue(wrapper.getClusters().length != 0);
     }
 }
